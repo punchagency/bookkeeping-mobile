@@ -1,15 +1,13 @@
 import 'package:elmer/config/theme/text_styles.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/onboarding/presentation/view/businnes_flow/company_form.dart';
-import 'package:elmer/features/onboarding/presentation/view/personal_flow/person_info_page.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/button.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/option_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BussinesPersonalPage extends StatefulWidget {
-  static const routeName = '/BussinesPersonalPage';
   const BussinesPersonalPage({super.key});
 
   @override
@@ -17,7 +15,7 @@ class BussinesPersonalPage extends StatefulWidget {
 }
 
 class _BussinesPersonalPageState extends State<BussinesPersonalPage> {
-  String? selectedOption; // Tracks the selected option (Business or Personal)
+  String? selectedOption;
 
   @override
   Widget build(BuildContext context) {
@@ -108,9 +106,11 @@ class _BussinesPersonalPageState extends State<BussinesPersonalPage> {
                 text: 'Next',
                 onTap: () {
                   if (selectedOption == 'Business') {
-                    Navigator.pushNamed(context, CompanyFormPage.routeName);
+                    Navigator.pushNamed(
+                        context, AppRoutes.mobileCompanyFormPage);
                   } else if (selectedOption == 'Personal') {
-                    Navigator.pushNamed(context, PersonalInfoPage.routeName);
+                    Navigator.pushNamed(
+                        context, AppRoutes.mobilePersonalInfoPage);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Please select an option')),

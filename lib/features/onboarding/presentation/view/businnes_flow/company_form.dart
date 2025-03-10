@@ -1,13 +1,11 @@
 import 'package:elmer/config/theme/text_styles.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/onboarding/presentation/view/businnes_flow/company_website.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/button.dart';
 import 'package:flutter/material.dart';
 
 class CompanyFormPage extends StatefulWidget {
-  static const routeName = '/CompanyFormPage';
-
   const CompanyFormPage({
     Key? key,
   }) : super(key: key);
@@ -197,7 +195,10 @@ class _CompanyFormPageState extends State<CompanyFormPage> {
                 child: CustomButton(
                   text: 'Next',
                   onTap: () {
-                    Navigator.pushNamed(context, CompanyWebsiteForm.routeName);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.mobileCompanyWebsiteForm,
+                    );
                   },
                 ),
               ),

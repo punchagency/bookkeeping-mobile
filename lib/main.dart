@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
           ),
           initialRoute: Splash.routeName,
-          onGenerateRoute: onGenerateRoute,
+          onGenerateRoute: AppRoutes.onGenerateRoute,
           home: child,
         );
       },

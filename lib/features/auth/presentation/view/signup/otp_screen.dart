@@ -1,11 +1,10 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/auth/presentation/view/signup/setup_password.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class SignUpOtpScreen extends StatefulWidget {
-  static const routeName = '/signupOtp';
   const SignUpOtpScreen({super.key});
 
   @override
@@ -61,7 +60,7 @@ class _SignUpOtpScreenState extends State<SignUpOtpScreen> {
             100.toColumnSpace(),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, SetupPasswordScreen.routeName);
+                Navigator.pushNamed(context, AppRoutes.mobileSetupPassword);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.elmerGreen,
@@ -70,7 +69,6 @@ class _SignUpOtpScreenState extends State<SignUpOtpScreen> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                
               ),
               child: const Text(
                 'Verify OTP',

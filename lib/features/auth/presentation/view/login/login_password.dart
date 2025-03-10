@@ -1,13 +1,11 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/config/theme/text_styles.dart';
 import 'package:elmer/core/utils/colors.dart';
-import 'package:elmer/features/auth/presentation/view/forgot_password/forgot_password.dart';
-import 'package:elmer/features/dashboard/presentation/view/dashboard.dart';
 import 'package:elmer/shared/formfield/textfield.dart';
 
 class LogInPasswordScreen extends StatefulWidget {
-  static const routeName = '/loginpassword';
   const LogInPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -28,7 +26,10 @@ class _LogInPasswordScreenState extends State<LogInPasswordScreen> {
     return Scaffold(
       backgroundColor: AppColors.appBkWhite,
       appBar: AppBar(
-        title: const Text('Enter Password'),
+        title: const Text('Enter Password',
+            style: TextStyle(
+              color: Colors.white,
+            )),
         backgroundColor: AppColors.elmerGreen,
         centerTitle: true,
         iconTheme: const IconThemeData(
@@ -75,7 +76,7 @@ class _LogInPasswordScreenState extends State<LogInPasswordScreen> {
                     onPressed: () {
                       final password = _passwordController.text.trim();
                       if (password.isNotEmpty) {
-                        Navigator.pushNamed(context, DashboardScreen.routeName);
+                        Navigator.pushNamed(context, AppRoutes.mobileDashbord);
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -97,7 +98,7 @@ class _LogInPasswordScreenState extends State<LogInPasswordScreen> {
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(
-                          context, ForgotPasswordScreen.routeName);
+                          context, AppRoutes.mobileForgetPassword);
                     },
                     child: Text(
                       'Forgot Password?',

@@ -1,11 +1,10 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/config/theme/text_styles.dart';
 import 'package:elmer/core/utils/colors.dart';
-import 'package:elmer/features/auth/presentation/view/forgot_password/otp_screen.dart';
 import 'package:elmer/shared/formfield/textfield.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
-  static const routeName = '/forgot_password';
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -26,7 +25,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Scaffold(
       backgroundColor: AppColors.appBkWhite,
       appBar: AppBar(
-        title: const Text('Forgot Password'),
+        title: const Text(
+          'Forgot Password',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColors.elmerGreen,
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -80,7 +82,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         // Navigate to the OTP screen
                         Navigator.pushNamed(
                           context,
-                          OtpScreen.routeName,
+                          AppRoutes.mobileForgetPasswordOtp,
                         );
                         // } else {
                         //   ScaffoldMessenger.of(context).showSnackBar(

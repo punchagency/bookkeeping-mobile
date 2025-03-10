@@ -1,10 +1,9 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/core/utils/colors.dart'; // Import your color file
-import 'package:elmer/features/auth/presentation/view/signup/otp_screen.dart';
+import 'package:elmer/core/utils/colors.dart';
 
 class EmailPhoneScreen extends StatefulWidget {
-  static const routeName = '/email_phone';
   const EmailPhoneScreen({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +18,10 @@ class _EmailPhoneScreenState extends State<EmailPhoneScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: const Text('Sign Up'),
+        title: const Text(
+          'Sign Up',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColors.elmerGreen,
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -57,7 +59,7 @@ class _EmailPhoneScreenState extends State<EmailPhoneScreen> {
               onPressed: () {
                 final emailPhone = _emailPhoneController.text.trim();
                 if (emailPhone.isNotEmpty) {
-                  Navigator.pushNamed(context, SignUpOtpScreen.routeName);
+                  Navigator.pushNamed(context, AppRoutes.mobileSignUpOtp);
                 }
               },
               style: ElevatedButton.styleFrom(

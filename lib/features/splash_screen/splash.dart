@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:math';
-import 'package:elmer/features/chat/presentation/view/desktop/chat_page.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -33,9 +33,10 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
       //   Navigator.pushReplacementNamed(context, WebHomeScreen.routeName);
       // } else
       if (Platform.isAndroid || Platform.isIOS) {
-        // Navigator.pushReplacementNamed(context, WelcomeScreen.routeName);
+        Navigator.pushReplacementNamed(
+            context, AppRoutes.mobilemobilePersonalInfoPage);
       } else if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
-        Navigator.pushReplacementNamed(context, ChatPage.routeName);
+        Navigator.pushReplacementNamed(context, AppRoutes.desktopChatScreen);
       }
     });
   }

@@ -1,14 +1,12 @@
 import 'package:elmer/config/theme/text_styles.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/onboarding/presentation/view/businnes_flow/business_structure.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IndustryCategoryPage extends StatefulWidget {
-  static const routeName = '/IndustryCategoryPage';
-
   const IndustryCategoryPage({super.key});
   @override
   _IndustryCategoryPageState createState() => _IndustryCategoryPageState();
@@ -203,7 +201,8 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
                 child: CustomButton(
                   text: 'Next',
                   onTap: () {
-                    Navigator.pushNamed(context, BusinessStructure.routeName);
+                    Navigator.pushNamed(
+                        context, AppRoutes.mobileBusinessStructure);
                   },
                 ),
               ),

@@ -6,7 +6,6 @@ import 'package:elmer/features/auth/presentation/view/forgot_password/setup_pass
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class OtpScreen extends StatefulWidget {
-  static const routeName = '/otp';
   const OtpScreen({Key? key}) : super(key: key);
 
   @override
@@ -27,7 +26,10 @@ class _OtpScreenState extends State<OtpScreen> {
     return Scaffold(
       backgroundColor: AppColors.appBkWhite,
       appBar: AppBar(
-        title: const Text('OTP Verification'),
+        title: const Text(
+          'OTP Verification',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColors.elmerGreen,
         centerTitle: true,
         automaticallyImplyLeading: false,

@@ -6,6 +6,7 @@ import 'package:elmer/features/onboarding/presentation/view/businnes_flow/compan
 import 'package:elmer/features/onboarding/presentation/view/businnes_flow/company_website.dart';
 import 'package:elmer/features/onboarding/presentation/view/businnes_flow/industry_categories.dart';
 import 'package:elmer/features/onboarding/presentation/view/personal_flow/person_info_page.dart';
+import 'package:elmer/features/onboarding/presentation/view/select_bank.dart';
 import 'package:elmer/features/onboarding/presentation/view/tailor_elmer.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/features/auth/presentation/view/forgot_password/forgot_password.dart';
@@ -19,109 +20,110 @@ import 'package:elmer/features/auth/presentation/view/signup/setup_password.dart
 import 'package:elmer/features/dashboard/presentation/view/dashboard.dart';
 import 'package:elmer/features/splash_screen/splash.dart';
 
-Route onGenerateRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case Splash.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const Splash(),
-        settings: const RouteSettings(name: Splash.routeName),
-      );
-    case HomePage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const HomePage(),
-        settings: const RouteSettings(name: HomePage.routeName),
-      );
-    case WelcomeScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const WelcomeScreen(),
-        settings: const RouteSettings(name: WelcomeScreen.routeName),
-      );
-    case LoginScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const LoginScreen(),
-        settings: const RouteSettings(name: LoginScreen.routeName),
-      );
-    case LogInPasswordScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const LogInPasswordScreen(),
-        settings: const RouteSettings(name: LogInPasswordScreen.routeName),
-      );
-    case EmailPhoneScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const EmailPhoneScreen(),
-        settings: const RouteSettings(name: EmailPhoneScreen.routeName),
-      );
-    case ForgotPasswordScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const ForgotPasswordScreen(),
-        settings: const RouteSettings(name: ForgotPasswordScreen.routeName),
-      );
-    case SignUpOtpScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const SignUpOtpScreen(),
-        settings: const RouteSettings(name: SignUpOtpScreen.routeName),
-      );
-    case SetupPasswordScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const SetupPasswordScreen(),
-        settings: const RouteSettings(name: SetupPasswordScreen.routeName),
-      );
-    case OtpScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const OtpScreen(),
-        settings: const RouteSettings(name: OtpScreen.routeName),
-      );
-    case DashboardScreen.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const DashboardScreen(),
-        settings: const RouteSettings(name: DashboardScreen.routeName),
-      );
-    case BussinesPersonalPage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const BussinesPersonalPage(),
-        settings: const RouteSettings(name: BussinesPersonalPage.routeName),
-      );
-    case CompanyFormPage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const CompanyFormPage(),
-        settings: const RouteSettings(name: CompanyFormPage.routeName),
-      );
-    case CompanyWebsiteForm.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const CompanyWebsiteForm(),
-        settings: const RouteSettings(name: CompanyWebsiteForm.routeName),
-      );
-    case IndustryCategoryPage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const IndustryCategoryPage(),
-        settings: const RouteSettings(name: IndustryCategoryPage.routeName),
-      );
-    case BusinessStructure.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const BusinessStructure(),
-        settings: const RouteSettings(name: BusinessStructure.routeName),
-      );
-    case TailorElmer.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const TailorElmer(),
-        settings: const RouteSettings(name: TailorElmer.routeName),
-      );
-    case PersonalInfoPage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const PersonalInfoPage(),
-        settings: const RouteSettings(name: PersonalInfoPage.routeName),
-      );
-// ChatPage
-    // case Desktop Screen
-    case ChatPage.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const ChatPage(),
-        settings: const RouteSettings(name: ChatPage.routeName),
-      );
-    default:
-      return MaterialPageRoute(
-        builder: (_) => const Splash(),
-        settings: const RouteSettings(name: Splash.routeName),
-      );
+class AppRoutes {
+  static const routeName = '/welcome';
+  static const moblieLoginScreen = '/login';
+  static const mobileEmailNumberScreen = '/email_phone';
+  static const mobileLoginPassword = '/loginpassword';
+  static const mobileForgetPassword = '/forgot_password';
+  static const mobileSignUpOtp = '/signupOtp';
+  static const mobileSetupPassword = '/setup_password';
+  static const mobileForgetPasswordOtp = '/otp';
+  static const mobileDashbord = '/dashboard';
+  static const mobileTailorElmer = '/TailorElmer';
+  static const mobileBussinesPersonalPage = '/BussinesPersonalPage';
+  static const mobileCompanyFormPage = '/CompanyFormPage';
+  static const mobileCompanyWebsiteForm = '/CompanyWebsiteForm';
+  static const mobileIndustryCategoryPage = '/IndustryCategoryPage';
+  static const mobileBusinessStructure = '/BusinessStructure';
+  static const mobilePersonalInfoPage = '/PersonalInfoPage';
+  static const mobilemobilePersonalInfoPage = '/mobilePersonalInfoPage';
+
+// ..
+// .
+// ..
+// .
+// .
+  // case Desktop Screen
+  static const desktopChatScreen = '/ChatPage';
+
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case Splash.routeName:
+        return MaterialPageRoute(
+          builder: (_) => const Splash(),
+          settings: const RouteSettings(name: Splash.routeName),
+        );
+      case HomePage.routeName:
+        return MaterialPageRoute(
+          builder: (_) => const HomePage(),
+          settings: const RouteSettings(name: HomePage.routeName),
+        );
+      case routeName:
+        return MaterialPageRoute(builder: (_) => const WelcomeScreen());
+
+      case moblieLoginScreen:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+
+      case mobileLoginPassword:
+        return MaterialPageRoute(builder: (_) => const LogInPasswordScreen());
+
+      case mobileEmailNumberScreen:
+        return MaterialPageRoute(builder: (_) => const EmailPhoneScreen());
+
+      case mobileForgetPassword:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
+
+      case mobileSignUpOtp:
+        return MaterialPageRoute(builder: (_) => const SignUpOtpScreen());
+
+      case mobileSetupPassword:
+        return MaterialPageRoute(builder: (_) => const SetupPasswordScreen());
+
+      case mobileForgetPasswordOtp:
+        return MaterialPageRoute(builder: (_) => const OtpScreen());
+
+      case mobileDashbord:
+        return MaterialPageRoute(builder: (_) => const DashboardScreen());
+
+      case mobileBussinesPersonalPage:
+        return MaterialPageRoute(builder: (_) => const BussinesPersonalPage());
+
+      case mobileCompanyFormPage:
+        return MaterialPageRoute(builder: (_) => const CompanyFormPage());
+
+      case mobileCompanyWebsiteForm:
+        return MaterialPageRoute(builder: (_) => const CompanyWebsiteForm());
+
+      case mobileIndustryCategoryPage:
+        return MaterialPageRoute(builder: (_) => const IndustryCategoryPage());
+
+      case mobileBusinessStructure:
+        return MaterialPageRoute(builder: (_) => const BusinessStructure());
+     
+      case mobileTailorElmer:
+        return MaterialPageRoute(builder: (_) => const TailorElmer());
+
+      case mobilePersonalInfoPage:
+        return MaterialPageRoute(builder: (_) => const PersonalInfoPage());
+
+      case mobilemobilePersonalInfoPage:
+        return MaterialPageRoute(builder: (_) => const SelectBankPage());
+      
+
+// ..
+// .
+// ..
+// .
+// .
+      // case Desktop Screen
+      case desktopChatScreen:
+        return MaterialPageRoute(builder: (_) => const ChatPage());
+      default:
+        return MaterialPageRoute(
+          builder: (_) => const Splash(),
+          settings: const RouteSettings(name: Splash.routeName),
+        );
+    }
   }
 }

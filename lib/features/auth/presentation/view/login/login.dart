@@ -1,11 +1,10 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/config/theme/text_styles.dart';
 import 'package:elmer/core/utils/colors.dart';
-import 'package:elmer/features/auth/presentation/view/login/login_password.dart';
 import 'package:elmer/shared/formfield/textfield.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const routeName = '/login';
   const LoginScreen({super.key});
 
   @override
@@ -83,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (emailPhone.isNotEmpty) {
                         Navigator.pushNamed(
                           context,
-                          LogInPasswordScreen.routeName,
+                          AppRoutes.mobileLoginPassword,
                         );
                       }
                     },

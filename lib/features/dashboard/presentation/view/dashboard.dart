@@ -4,7 +4,6 @@ import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
 
 class DashboardScreen extends StatefulWidget {
-  static const routeName = '/dashboard';
   const DashboardScreen({Key? key}) : super(key: key);
 
   @override

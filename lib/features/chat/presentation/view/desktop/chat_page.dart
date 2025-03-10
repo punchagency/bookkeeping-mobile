@@ -8,7 +8,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class ChatPage extends StatefulWidget {
-  static const routeName = '/ChatPage';
   const ChatPage({super.key});
 
   @override

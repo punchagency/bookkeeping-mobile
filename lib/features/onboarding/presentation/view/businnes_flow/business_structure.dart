@@ -1,13 +1,12 @@
 import 'package:elmer/config/theme/text_styles.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/onboarding/presentation/view/tailor_elmer.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BusinessStructure extends StatefulWidget {
-  static const routeName = '/BusinessStructure';
 
   const BusinessStructure({super.key});
   @override
@@ -185,7 +184,7 @@ class _BusinessStructureState extends State<BusinessStructure> {
                 child: CustomButton(
                   text: 'Next',
                   onTap: () {
-                    Navigator.pushNamed(context, TailorElmer.routeName);
+                    Navigator.pushNamed(context, AppRoutes.mobileTailorElmer);
                   },
                 ),
               ),

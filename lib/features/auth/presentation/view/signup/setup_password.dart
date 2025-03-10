@@ -1,10 +1,9 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
-import 'package:elmer/features/onboarding/presentation/view/bussiness-personal.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/core/utils/extension.dart';
 
 class SetupPasswordScreen extends StatefulWidget {
-  static const routeName = '/setup_password';
   const SetupPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -30,7 +29,10 @@ class _SetupPasswordScreenState extends State<SetupPasswordScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Setup Password'),
+        title: const Text(
+          'Setup Password',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColors.elmerGreen,
         centerTitle: true,
         iconTheme: const IconThemeData(
@@ -126,7 +128,7 @@ class _SetupPasswordScreenState extends State<SetupPasswordScreen> {
                 if (password.isNotEmpty && confirmPassword.isNotEmpty) {
                   if (password == confirmPassword) {
                     Navigator.pushNamed(
-                        context, BussinesPersonalPage.routeName);
+                        context, AppRoutes.mobileBussinesPersonalPage);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(

@@ -1,13 +1,11 @@
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:elmer/config/theme/text_styles.dart';
 import 'package:elmer/core/utils/colors.dart';
-import 'package:elmer/features/auth/presentation/view/login/login.dart';
-import 'package:elmer/features/auth/presentation/view/signup/email_phone_number.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  static const routeName = '/welcome';
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -45,7 +43,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, EmailPhoneScreen.routeName);
+                    Navigator.pushNamed(
+                        context, AppRoutes.mobileEmailNumberScreen);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.elmerGreen,
@@ -67,7 +66,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 width: double.infinity,
                 child: OutlinedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.routeName);
+                    Navigator.pushNamed(context, AppRoutes.moblieLoginScreen);
                   },
                   style: OutlinedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 15.h),

@@ -1,15 +1,14 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:elmer/config/theme/text_styles.dart';
+import 'package:elmer/core/routes/route.dart';
 import 'package:elmer/core/utils/colors.dart';
 import 'package:elmer/core/utils/extension.dart';
-import 'package:elmer/features/onboarding/presentation/view/tailor_elmer.dart';
 import 'package:elmer/features/onboarding/presentation/view/widget/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PersonalInfoPage extends StatefulWidget {
-  static const routeName = '/PersonalInfoPage';
 
   const PersonalInfoPage({
     super.key,
@@ -133,7 +132,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
               child: CustomButton(
                 text: 'Next',
                 onTap: () {
-                  Navigator.pushNamed(context, TailorElmer.routeName);
+                  Navigator.pushNamed(context, AppRoutes.mobileTailorElmer);
                 },
               ),
             ),
