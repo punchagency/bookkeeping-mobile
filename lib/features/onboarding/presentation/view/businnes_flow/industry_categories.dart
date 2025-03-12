@@ -78,7 +78,7 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColors.secondaryButton,
+        backgroundColor: AppColors.elmerGreen,
         title: Text(
           'Elmer',
           style: AppTextStyle.h2.copyWith(
@@ -109,7 +109,7 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
                     '3➝',
                     style: AppTextStyle.l3.copyWith(
                       fontWeight: FontWeight.w400,
-                      color: AppColors.secondaryButton,
+                      color: AppColors.elmerGreen,
                     ),
                   ),
                   10.toRowSpace(),
@@ -141,7 +141,6 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
                             hintText: 'Type or select an option',
                             hintStyle: AppTextStyle.l3.copyWith(
                               fontWeight: FontWeight.w300,
-                              decoration: TextDecoration.underline,
                               color: AppColors.hintText,
                             ),
                             enabledBorder: const UnderlineInputBorder(
@@ -165,7 +164,6 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
                           ),
                           style: AppTextStyle.l3.copyWith(
                             fontWeight: FontWeight.w300,
-                            decoration: TextDecoration.underline,
                             color: AppColors.primaryText,
                           ),
                         ),

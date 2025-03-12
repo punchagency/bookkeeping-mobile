@@ -1,4 +1,9 @@
 import 'package:elmer/config/responsive_layout.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/forgot_password/setup_password_screen.dart';
+import 'package:elmer/features/auth/presentation/view/web/forgot_password/forgot_password.dart';
+import 'package:elmer/features/auth/presentation/view/web/login/login.dart';
+import 'package:elmer/features/auth/presentation/view/web/login/login_password.dart';
+import 'package:elmer/features/auth/presentation/view/web/welcome_screen.dart';
 import 'package:elmer/features/chat/presentation/view/desktop/chat_page.dart';
 import 'package:elmer/features/onboarding/presentation/view/businnes_flow/business_structure.dart';
 import 'package:elmer/features/onboarding/presentation/view/bussiness-personal.dart';
@@ -9,14 +14,14 @@ import 'package:elmer/features/onboarding/presentation/view/personal_flow/person
 import 'package:elmer/features/onboarding/presentation/view/select_bank.dart';
 import 'package:elmer/features/onboarding/presentation/view/tailor_elmer.dart';
 import 'package:flutter/material.dart';
-import 'package:elmer/features/auth/presentation/view/forgot_password/forgot_password.dart';
-import 'package:elmer/features/auth/presentation/view/forgot_password/otp_screen.dart';
-import 'package:elmer/features/auth/presentation/view/login/login.dart';
-import 'package:elmer/features/auth/presentation/view/login/login_password.dart';
-import 'package:elmer/features/auth/presentation/view/signup/email_phone_number.dart';
-import 'package:elmer/features/auth/presentation/view/login_signup.dart';
-import 'package:elmer/features/auth/presentation/view/signup/otp_screen.dart';
-import 'package:elmer/features/auth/presentation/view/signup/setup_password.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/forgot_password/forgot_password.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/forgot_password/otp_screen.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/login/login.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/login/login_password.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/signup/email_phone_number.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/welcome_screen.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/signup/otp_screen.dart';
+import 'package:elmer/features/auth/presentation/view/mobile/signup/setup_password.dart';
 import 'package:elmer/features/dashboard/presentation/view/dashboard.dart';
 import 'package:elmer/features/splash_screen/splash.dart';
 
@@ -28,6 +33,7 @@ class AppRoutes {
   static const mobileForgetPassword = '/forgot_password';
   static const mobileSignUpOtp = '/signupOtp';
   static const mobileSetupPassword = '/setup_password';
+  static const mobileNewForgetPassword = '/mobileNewForgetPassword';
   static const mobileForgetPasswordOtp = '/otp';
   static const mobileDashbord = '/dashboard';
   static const mobileTailorElmer = '/TailorElmer';
@@ -37,16 +43,32 @@ class AppRoutes {
   static const mobileIndustryCategoryPage = '/IndustryCategoryPage';
   static const mobileBusinessStructure = '/BusinessStructure';
   static const mobilePersonalInfoPage = '/PersonalInfoPage';
-  static const mobilemobilePersonalInfoPage = '/mobilePersonalInfoPage';
+  static const mobileSelectBankPage = '/mobilePersonalInfoPage';
 
 // ..
 // .
 // ..
 // .
 // .
-  // case Desktop Screen
-  static const desktopChatScreen = '/ChatPage';
-
+  // case web Screen
+  static const webWelcomeScreen = '/webWelcomeScreen';
+  static const webChatScreen = '/ChatPage';
+  static const webLoginScreen = '/webLoginScreen';
+  static const webLoginPassword = '/webLoginPassword';
+  static const webForgetPassword = '/webForgetPassword';
+  static const webEmailNumberScreen = '/email_phone';
+  static const webSignUpOtp = '/signupOtp';
+  static const webSetupPassword = '/setup_password';
+  static const webForgetPasswordOtp = '/otp';
+  static const webDashbord = '/dashboard';
+  static const webTailorElmer = '/TailorElmer';
+  static const webBussinesPersonalPage = '/BussinesPersonalPage';
+  static const webCompanyFormPage = '/CompanyFormPage';
+  static const webCompanyWebsiteForm = '/CompanyWebsiteForm';
+  static const webIndustryCategoryPage = '/IndustryCategoryPage';
+  static const webBusinessStructure = '/BusinessStructure';
+  static const webPersonalInfoPage = '/PersonalInfoPage';
+  static const webSelectBankPage = '/mobilePersonalInfoPage';
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Splash.routeName:
@@ -81,7 +103,11 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SetupPasswordScreen());
 
       case mobileForgetPasswordOtp:
-        return MaterialPageRoute(builder: (_) => const OtpScreen());
+        return MaterialPageRoute(
+            builder: (_) => const MobileForgetPasswordOtpScreen());
+
+      case mobileNewForgetPassword:
+        return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
 
       case mobileDashbord:
         return MaterialPageRoute(builder: (_) => const DashboardScreen());
@@ -100,16 +126,15 @@ class AppRoutes {
 
       case mobileBusinessStructure:
         return MaterialPageRoute(builder: (_) => const BusinessStructure());
-     
+
       case mobileTailorElmer:
         return MaterialPageRoute(builder: (_) => const TailorElmer());
 
       case mobilePersonalInfoPage:
         return MaterialPageRoute(builder: (_) => const PersonalInfoPage());
 
-      case mobilemobilePersonalInfoPage:
+      case mobileSelectBankPage:
         return MaterialPageRoute(builder: (_) => const SelectBankPage());
-      
 
 // ..
 // .
@@ -117,7 +142,35 @@ class AppRoutes {
 // .
 // .
       // case Desktop Screen
-      case desktopChatScreen:
+      case webWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const WebWelcomeScreen());
+
+      // web login screen
+      case webLoginScreen:
+        return MaterialPageRoute(builder: (_) => const WebLoginScreen());
+
+      case webLoginPassword:
+        return MaterialPageRoute(
+            builder: (_) => const WebLogInPasswordScreen());
+
+      // web forgot password screen
+      case webForgetPassword:
+        return MaterialPageRoute(
+            builder: (_) => const WebForgotPasswordScreen());
+
+      case webWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const WebWelcomeScreen());
+
+      case webWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const WebWelcomeScreen());
+
+      case webWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const WebWelcomeScreen());
+
+      case webWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const WebWelcomeScreen());
+
+      case webChatScreen:
         return MaterialPageRoute(builder: (_) => const ChatPage());
       default:
         return MaterialPageRoute(

@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BusinessStructure extends StatefulWidget {
-
   const BusinessStructure({super.key});
   @override
   _BusinessStructureState createState() => _BusinessStructureState();
@@ -126,7 +125,6 @@ class _BusinessStructureState extends State<BusinessStructure> {
                             hintText: 'Type or select an option',
                             hintStyle: AppTextStyle.l3.copyWith(
                               fontWeight: FontWeight.w300,
-                              decoration: TextDecoration.underline,
                             ),
                             enabledBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -149,7 +147,6 @@ class _BusinessStructureState extends State<BusinessStructure> {
                           ),
                           style: AppTextStyle.l3.copyWith(
                             fontWeight: FontWeight.w300,
-                            decoration: TextDecoration.underline,
                           ),
                         ),
                         10.toColumnSpace(),

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:elmer/core/routes/route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -28,16 +29,11 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
     )..animateTo(1);
 
     Timer(const Duration(seconds: 4), () {
-      //   if (kIsWeb) {
-      //   // Web-specific navigation
-      //   Navigator.pushReplacementNamed(context, WebHomeScreen.routeName);
-      // } else
-      if (Platform.isAndroid || Platform.isIOS) {
-        Navigator.pushReplacementNamed(
-            context, AppRoutes.mobilemobilePersonalInfoPage);
-      } else if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
-        Navigator.pushReplacementNamed(context, AppRoutes.desktopChatScreen);
-      }
+      if (kIsWeb) {
+        Navigator.pushReplacementNamed(context, AppRoutes.webWelcomeScreen);
+      } else if (Platform.isAndroid || Platform.isIOS) {
+        Navigator.pushReplacementNamed(context, AppRoutes.routeName);
+      } else if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {}
     });
   }
 

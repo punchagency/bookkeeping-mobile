@@ -66,7 +66,7 @@ class _BussinesPersonalPageState extends State<BussinesPersonalPage> {
               text: TextSpan(
                 text: 'A. ',
                 style: AppTextStyle.b3.copyWith(
-                  color: Color(0xff01CD22),
+                  color: AppColors.elmerGreen,
                 ),
                 children: [
                   TextSpan(

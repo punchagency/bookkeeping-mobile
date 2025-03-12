@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TailorElmer extends StatefulWidget {
-
   const TailorElmer({super.key});
   @override
   _TailorElmerState createState() => _TailorElmerState();
@@ -22,7 +21,7 @@ class _TailorElmerState extends State<TailorElmer> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColors.secondaryButton,
+        backgroundColor: AppColors.elmerGreen,
         title: Text(
           'Elmer',
           style: AppTextStyle.h2.copyWith(
@@ -53,7 +52,7 @@ class _TailorElmerState extends State<TailorElmer> {
                     '5➝',
                     style: AppTextStyle.l3.copyWith(
                       fontWeight: FontWeight.w400,
-                      color: AppColors.secondaryButton,
+                      color: AppColors.elmerGreen,
                     ),
                   ),
                   10.toRowSpace(),
@@ -82,7 +81,6 @@ class _TailorElmerState extends State<TailorElmer> {
                             hintText: 'Type your answer here',
                             hintStyle: AppTextStyle.l3.copyWith(
                               fontWeight: FontWeight.w300,
-                              decoration: TextDecoration.underline,
                             ),
                             enabledBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -97,7 +95,6 @@ class _TailorElmerState extends State<TailorElmer> {
                           ),
                           style: AppTextStyle.l3.copyWith(
                             fontWeight: FontWeight.w300,
-                            decoration: TextDecoration.underline,
                           ),
                         ),
                         10.toColumnSpace(),
@@ -120,7 +117,10 @@ class _TailorElmerState extends State<TailorElmer> {
                 child: CustomButton(
                   text: 'Next',
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.mobileDashbord,);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.mobileDashbord,
+                    );
                   },
                 ),
               ),
