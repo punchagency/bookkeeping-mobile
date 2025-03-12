@@ -57,7 +57,7 @@ class _IndustryCategoryPageState extends State<IndustryCategoryPage> {
           child: Text(
             category,
             style: AppTextStyle.b1.copyWith(
-              color: AppColors.appBKWhite150,
+              color: AppColors.elmerGreen,
             ),
           ),
         );

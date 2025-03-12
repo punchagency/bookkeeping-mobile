@@ -43,7 +43,7 @@ class _BusinessStructureState extends State<BusinessStructure> {
           child: Text(
             category,
             style: AppTextStyle.b1.copyWith(
-              color: AppColors.appBKWhite150,
+              color: AppColors.elmerGreen,
             ),
           ),
         );
